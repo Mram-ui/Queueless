@@ -41,6 +41,7 @@ import android.database.sqlite.SQLiteOpenHelper;
         public static final String COL_CAR_TYPE = "car_type";
         public static final String COL_PICKUP_LOCATION = "pickup_location";
         public static final String COL_SERVICE_DATE_TIME = "service_date_time";
+        public static final String COL_SIZE = "size";
         public static final String COL_RESERVATION_ID_TRANSPORT = "reservation_id";
 
         public DBHelper(Context context) {
@@ -88,6 +89,7 @@ import android.database.sqlite.SQLiteOpenHelper;
                     + COL_CAR_TYPE + " TEXT, "
                     + COL_PICKUP_LOCATION + " TEXT, "
                     + COL_SERVICE_DATE_TIME + " TEXT, "
+                    + COL_SIZE + " TEXT, "
                     + COL_RESERVATION_ID_TRANSPORT + " INTEGER, "
                     + "FOREIGN KEY(" + COL_RESERVATION_ID_TRANSPORT + ") REFERENCES " + RESERVATION_TABLE + "(" + COL_RESERVATION_ID + "))";
             sqLiteDatabase.execSQL(createTransportationTableQuery);
