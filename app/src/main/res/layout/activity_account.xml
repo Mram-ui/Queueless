@@ -9,7 +9,7 @@
 
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/arrow"
         android:layout_width="78dp"
         android:layout_height="63dp"
         android:rotation="-45"
@@ -50,11 +50,11 @@
         android:background="@drawable/edit"
         android:drawablePadding="8dp"
         android:ems="10"
+        android:hint="    Username"
         android:inputType="text"
         android:padding="8dp"
-        android:text="    Username"
         android:textColor="#FAF7F7"
-        android:textSize="18sp"
+        android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@+id/email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.521"
@@ -70,11 +70,11 @@
         android:background="@drawable/edit"
         android:drawablePadding="8dp"
         android:ems="10"
-        android:inputType="text"
+        android:hint="    Phone Number"
+        android:inputType="phone"
         android:padding="8dp"
-        android:text="   0542656589"
         android:textColor="#FAF7F7"
-        android:textSize="18sp"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,12 +88,11 @@
         android:background="@drawable/edit"
         android:drawablePadding="8dp"
         android:ems="10"
-        android:inputType="text"
+        android:hint="    Email"
+        android:inputType="textEmailAddress"
         android:padding="8dp"
-        android:text="   Email@gmail"
         android:textColor="#FAF7F7"
-
-        android:textSize="18sp"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
@@ -125,11 +124,11 @@
         android:background="@drawable/edit"
         android:drawablePadding="8dp"
         android:ems="10"
-        android:inputType="text"
+        android:hint="    Password"
+        android:inputType="textPassword"
         android:padding="8dp"
-        android:text="   *****"
         android:textColor="#FAF7F7"
-        android:textSize="18sp"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
@@ -159,9 +158,6 @@
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         app:layout_constraintEnd_toStartOf="@+id/imageButton"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" /><![CDATA[
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
-    />
-
-]]>
 </androidx.constraintlayout.widget.ConstraintLayout>

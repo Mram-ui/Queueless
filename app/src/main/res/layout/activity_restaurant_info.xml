@@ -180,7 +180,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/SignupButton"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="198dp"
         android:layout_height="62dp"
