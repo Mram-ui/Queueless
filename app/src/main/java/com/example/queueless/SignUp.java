@@ -26,7 +26,7 @@ public class SignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        // Initialize views
+        
         userNameEditText = findViewById(R.id.editTextText1);
         emailEditText = findViewById(R.id.editTextTextEmailAddress);
         phoneEditText = findViewById(R.id.editTextPhone);
@@ -34,7 +34,7 @@ public class SignUp extends AppCompatActivity {
         signUpButton = findViewById(R.id.button);
         loginTextView = findViewById(R.id.textView8);
 
-        // Initialize DBHelper
+        
         dbHelper = new DBHelper(this);
 
         signUpButton.setOnClickListener(new View.OnClickListener() {
@@ -51,7 +51,7 @@ public class SignUp extends AppCompatActivity {
             }
         });
 
-        // Handle arrow image click to navigate back to MainActivity
+        
         findViewById(R.id.arrow).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,15 +66,15 @@ public class SignUp extends AppCompatActivity {
         String phone = phoneEditText.getText().toString().trim();
         String password = passwordEditText.getText().toString().trim();
 
-        // Validate input fields
+        
         if (TextUtils.isEmpty(userName) || TextUtils.isEmpty(email) || TextUtils.isEmpty(phone) || TextUtils.isEmpty(password)) {
             Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
         } else {
-            // Check if email already exists
+            
             if (checkIfEmailExists(email)) {
                 Toast.makeText(this, "Email already exists", Toast.LENGTH_SHORT).show();
             } else {
-                // Insert new user into the database
+                
                 SQLiteDatabase db = dbHelper.getWritableDatabase();
                 ContentValues values = new ContentValues();
                 values.put(DBHelper.COL_USERNAME, userName);
@@ -84,10 +84,11 @@ public class SignUp extends AppCompatActivity {
                 long newRowId = db.insert(DBHelper.USER_TABLE, null, values);
 
                 if (newRowId != -1) {
-                    // Signup successful, navigate to HomeActivity
+                    
+                    SessionManager.userSignIn(newRowId);
                     Intent intent = new Intent(SignUp.this, Home.class);
                     startActivity(intent);
-                    finish(); // Close SignUp activity
+                    finish(); 
                 } else {
                     Toast.makeText(this, "Sign up failed, please try again", Toast.LENGTH_SHORT).show();
                 }

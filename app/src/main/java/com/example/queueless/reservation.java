@@ -25,6 +25,8 @@ import java.util.Locale;
 
 public class reservation extends AppCompatActivity {
 
+    public static int restaurantID = -1;
+
     CalendarView calendarView;
     TextView textOfDate;
     EditText numPerson;
@@ -35,7 +37,8 @@ public class reservation extends AppCompatActivity {
     RadioGroup radioGroup;
     boolean wantCar ;
     DBHelper dbHelper;
-    int restaurantID = 1, userID = 1;
+
+    long userID = SessionManager.getUserid();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +63,8 @@ public class reservation extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(reservation.this, restaurantInfo.class);
+                startActivity(intent);
             }
         });
 
@@ -162,16 +166,26 @@ public class reservation extends AppCompatActivity {
         return simpleDateFormat.format(date);
     }
 
-    private void getTime (Button selectedTime) {
-//        changeButtonTint(btn1,R.color.color1);
-//        changeButtonTint(btn2,R.color.color1);
-//        changeButtonTint(btn3,R.color.color1);
-//        changeButtonTint(btn4,R.color.color1);
-//        changeButtonTint(btn5,R.color.color1);
-//        changeButtonTint(btn6,R.color.color1);
-        changeButtonTint(selectedTime,R.color.black);
+    private void getTime(Button selectedTime) {
+        
+        resetButtonBackgroundColors();
+
+        
+        selectedTime.setBackgroundColor(Color.BLACK);
+
+        
         Time = selectedTime.getText().toString();
     }
+
+    private void resetButtonBackgroundColors() {
+        btn1.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+        btn2.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+        btn3.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+        btn4.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+        btn5.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+        btn6.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+    }
+
 
     private void changeButtonTint(Button button, int tintColor) {
         Drawable drawable = button.getBackground();

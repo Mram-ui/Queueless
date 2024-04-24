@@ -23,16 +23,16 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // Initialize views
+        
         emailEditText = findViewById(R.id.editTextTextEmailAddress);
         passwordEditText = findViewById(R.id.editTextTextPassword);
         loginButton = findViewById(R.id.button);
         arrowImageView = findViewById(R.id.imageView2);
 
-        // Initialize DBHelper
+        
         dbHelper = new DBHelper(this);
 
-        // Set click listener for login button
+        
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,11 +40,11 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        // Set click listener for arrow image
+        
         arrowImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Navigate back to MainActivity
+                
                 Intent intent = new Intent(Login.this, MainActivity.class);
                 startActivity(intent);
             }
@@ -55,15 +55,17 @@ public class Login extends AppCompatActivity {
         String email = emailEditText.getText().toString().trim();
         String password = passwordEditText.getText().toString().trim();
 
-        // Check if email and password are not empty
+        
         if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
             Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
         } else {
-            // Query the database to check if the email exists and password matches
+            
             boolean loginSuccessful = dbHelper.checkUserCredentials(email, password);
 
-            // Show appropriate message based on login success
+            
             if (loginSuccessful) {
+                long userid = dbHelper.getUserIdByEmail(email);
+                SessionManager.userSignIn(userid);
                 goToHomeActivity();
             } else {
                 Toast.makeText(this, "Email or password is incorrect", Toast.LENGTH_SHORT).show();
@@ -74,6 +76,6 @@ public class Login extends AppCompatActivity {
     private void goToHomeActivity() {
         Intent intent = new Intent(Login.this, Home.class);
         startActivity(intent);
-        finish(); // Close Login activity
+        finish(); 
     }
 }

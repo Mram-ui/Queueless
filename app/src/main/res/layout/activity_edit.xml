@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".edit">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/edittoolbar"
+        android:layout_width="438dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="457dp"
+        android:background="#23263C"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toTopOf="@+id/date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/arrow"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="320dp"
+        android:layout_marginBottom="-65dp"
+        android:rotation="-45"
+        app:layout_constraintBottom_toTopOf="@+id/edittoolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.075"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/arrow" />
+
+    <TextView
+        android:id="@+id/editres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif"
+        android:text="Edit Reservation"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/edittoolbar"
+        app:layout_constraintEnd_toEndOf="@+id/edittoolbar"
+        app:layout_constraintStart_toStartOf="@+id/edittoolbar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/editres2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:fontFamily="serif"
+        android:text="Edit your reservation!"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edittoolbar" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="19dp"
+        android:fontFamily="serif"
+        android:text="Date:"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/time2"
+        app:layout_constraintEnd_toStartOf="@+id/editDate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edittoolbar" />
+
+
+    <TextView
+        android:id="@+id/time2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="139dp"
+        android:fontFamily="serif"
+        android:text="Time:"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/editTime"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date" />
+
+    <EditText
+        android:id="@+id/editDate"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="86dp"
+        android:ems="10"
+        android:hint="DD-MM-YYYY"
+        android:inputType="date"
+        app:layout_constraintBottom_toTopOf="@+id/time2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/date"
+        app:layout_constraintTop_toBottomOf="@+id/calendarView2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/editTime"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="49dp"
+        android:layout_marginEnd="86dp"
+        android:layout_marginBottom="48dp"
+        android:ems="10"
+        android:hint="00:00"
+        android:inputType="time"
+        app:layout_constraintBottom_toBottomOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/time2"
+        app:layout_constraintTop_toBottomOf="@+id/calendarView2" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="127dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="100dp"
+        android:backgroundTint="#23263C"
+        android:text="Confirm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calendarView2" />
+
+    <CalendarView
+        android:id="@+id/calendarView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.162"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editres2" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

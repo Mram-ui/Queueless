@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,11 +16,15 @@
         android:theme="@style/Theme.Queueless"
         tools:targetApi="31">
         <activity
-            android:name=".custom_confirm_address"
+            android:name=".edit"
             android:exported="false" />
         <activity
-            android:name=".activity_map"
+            android:name=".map"
             android:exported="false" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDXDUQLBx7LvYezT4iCys5ZMZq2fLQpmEI" />
+
         <activity
             android:name=".History"
             android:exported="false" />

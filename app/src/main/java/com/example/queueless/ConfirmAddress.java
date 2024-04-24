@@ -58,14 +58,14 @@ public class ConfirmAddress extends DialogFragment implements
 
         mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.mapp);
         mapFragment.getMapAsync(this);
-        // Toast.makeText(getActivity(),mNum,Toast.LENGTH_LONG).show();
+        
 
         SelectBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Toast.makeText(getActivity(), myAddress.getText().toString(), Toast.LENGTH_LONG).show();
+                
                 getFragmentManager().beginTransaction().remove(mapFragment).commit();
-                //getActivity().finish();
+                
                /* Intent resultIntent = new Intent();
                 resultIntent.putExtra("Address", myAddress.getText().toString());
                 resultIntent.putExtra("Lat", Lat);
